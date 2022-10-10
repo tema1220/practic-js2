@@ -205,3 +205,78 @@ if (hamburger && cola || fries === 3 && nuggets) {
    console.log('Done!')
 }
 
+
+
+
+// ЦИКЛЫ!!!
+
+
+let num = 50;
+
+while (num < 55){
+    console.log(num);
+    num++;
+}
+// пример выше. условно. пока наше условие не выполнено мы будет выполнять след. действие ++
+
+
+
+let num = 50;
+
+
+// do (сделай что-то)
+do {    
+    console.log(num);
+    num++;
+
+}
+while (num < 55);
+
+
+
+
+// 3-Й  ЦИКЛЫ
+let num = 50;  
+    //   1         2    3
+for(let i = 1; i < 18; i++) {
+    if (i === 6) {
+        break; 
+        // обрубает при выполнении условия
+        // подобный оператор continue позволяет пропустит тот шаг который нам не нужен. но при этом не прерывать сам цикл
+    }
+    console.log(i);
+   
+}
+1.значение i
+2.условие при котором закончится цикл
+3. шаг цикла
+
+
+
+
+// цикл внутри цикла
+// '\n' - оператор переноса строки.
+
+let result = '';
+const length = 7;
+for (let i = 1; i < length; i++){
+    for (let j = 0; j < i; j++){
+        result += "*";
+    }
+
+    result += '\n';
+}
+console.log (result);
+
+
+// first это метка. к которой обращается break либо continue
+first: for (let i = 0; i < 3; i++){
+    console.log (`first level: ${i}`);
+        for (let j = 0; j < 3; j++) {
+            console.log (`second level: ${j}`);
+            for (let k = 0; k < 5; k++) {
+                if (k === 2) continue first;
+                console.log (`third level: ${k}`);
+                }
+            }
+        }
