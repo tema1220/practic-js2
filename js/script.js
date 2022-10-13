@@ -488,3 +488,61 @@ if (personalMovieDB.count <10){
 
 
 console.log (personalMovieDB); 
+
+
+
+// функции
+
+
+// let num = 10; это глобальная переменная
+function showFirstMessage(text) {
+    console.log (text);
+    // let num = 30; это локальная переменная. в случае когда внутри функции нет переменной которую она ищет , она идет вверх. и берет значение от туда.
+
+    // замыкание функции это внутри этой функции есть все переменные которые ей доступны.
+    console.log (num)
+}
+// function showFirstMessage(text) {
+//     console.log (text);
+//     // let num = 20;
+//     console.log (num)
+// }
+showFirstMessage ("hello");
+console.log (num);
+
+// return как только функция видит это значение она прекращает свое действие. т.е. если в функции после return написать что либо еще то тот код будет мерт. он не будет никогда использоваться.
+function calc (a, b) {
+    return (a + b);  
+}
+console.log (calc (4, 3));
+console.log (calc (5, 2));
+console.log (calc (1, 3));
+console.log (calc (5, 8));
+
+
+// еще одно назначение return - это возращение значения наружу.
+function ret(){
+    let num = 50;
+    return num;
+}
+// return закидывает 50 ret () потом она попадает в const  и далее выводится в консоле
+const anotherNum = ret();
+console.log (anotherNum);
+
+
+// выше расмотренны функции fuction declaration их особенность в том что они загружаются еще до начала скрипта. т.е. загружается html потом загружаются переменные var потом fuction declaration а потом уже сам скрипт.
+
+
+// так же используется и function expression ее особенность в том что она выполняется когда до нее доходит поток кода по очереди.
+const logger = function (){
+    console.log("hello");
+};
+logger ();
+
+
+
+// стрелочные функции 
+const cal = (a, b) => {
+    console.log ('1');
+    return a + b;
+};
