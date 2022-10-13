@@ -546,3 +546,58 @@ const cal = (a, b) => {
     console.log ('1');
     return a + b;
 };
+
+
+const usdCurr = 30;
+const eurCurr = 45;
+function convert (amount, curr) {
+    console.log (curr * amount);
+}
+convert (500, usdCurr);
+convert (500, eurCurr);
+
+
+
+
+// return дополнение
+
+const usdCurr = 30;
+const discount = 0.9 ;
+function convert (amount, curr) {
+    return curr * amount;
+}
+function promotion (result){
+    console.log (result * discount);
+}
+const res = convert (500, usdCurr);
+// тоже самое что и след строка.
+// promotion (convert (500, usdCurr));
+
+promotion (res);
+
+
+
+
+
+
+function test () {
+    for (let i = 0; i < 5; i++) {
+        console.log (i);
+        if (i === 3) return
+    }
+    // в таком случае у нас цикл прерывается на трех (return в данном случае работает как и break), а так же прерывается и сама функция. и все что будет дальше после return  уже не выведется в этой функции.
+    console.log ('done');
+}
+test ();
+
+
+
+//  каждая фунцкия выводит значение return undefined
+
+function doNothing() {};
+console.log (doNothing() === undefined);
+
+// console.log это тоже функция. и в браузере помимо ответа выводит значение undefined.
+// после return не стоит стаивть перенос строки  
+return 
+curr * amount
